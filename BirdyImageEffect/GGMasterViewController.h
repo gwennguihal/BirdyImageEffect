@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GGDetailViewController.h"
 
 @interface GGMasterViewController : UITableViewController
+
+@property (nonatomic, strong) GGDetailViewController *detailViewController;
 
 @end

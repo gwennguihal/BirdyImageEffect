@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GGDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface GGDetailViewController : UIViewController
+
+@property (nonatomic, strong) id detailItem;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 
 @end

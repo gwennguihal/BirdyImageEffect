@@ -23,6 +23,7 @@
 		35BB870416FB4CAF003FAD45 /* GGMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB870316FB4CAF003FAD45 /* GGMasterViewController.m */; };
 		35BB870716FB4D09003FAD45 /* GGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB870616FB4D09003FAD45 /* GGDetailViewController.m */; };
 		35C8E02316FC5E61001B755B /* GGSPlitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8E02216FC5E61001B755B /* GGSPlitViewController.m */; };
+		9C2348301702008700DAE9EE /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C23482F1702008700DAE9EE /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		35BB870616FB4D09003FAD45 /* GGDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDetailViewController.m; sourceTree = "<group>"; };
 		35C8E02116FC5E61001B755B /* GGSPlitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSPlitViewController.h; sourceTree = "<group>"; };
 		35C8E02216FC5E61001B755B /* GGSPlitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSPlitViewController.m; sourceTree = "<group>"; };
+		9C23482F1702008700DAE9EE /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2348301702008700DAE9EE /* CoreImage.framework in Frameworks */,
 				359D5CFD16FB727A00D560CB /* QuartzCore.framework in Frameworks */,
 				35BB86A316FB1D98003FAD45 /* UIKit.framework in Frameworks */,
 				35BB86A516FB1D98003FAD45 /* Foundation.framework in Frameworks */,
@@ -70,7 +73,6 @@
 		35BB869616FB1D98003FAD45 = {
 			isa = PBXGroup;
 			children = (
-				359D5CFC16FB727A00D560CB /* QuartzCore.framework */,
 				35BB86A816FB1D98003FAD45 /* BirdyImageEffect */,
 				35BB86A116FB1D98003FAD45 /* Frameworks */,
 				35BB86A016FB1D98003FAD45 /* Products */,
@@ -88,6 +90,8 @@
 		35BB86A116FB1D98003FAD45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C23482F1702008700DAE9EE /* CoreImage.framework */,
+				359D5CFC16FB727A00D560CB /* QuartzCore.framework */,
 				35BB86A216FB1D98003FAD45 /* UIKit.framework */,
 				35BB86A416FB1D98003FAD45 /* Foundation.framework */,
 				35BB86A616FB1D98003FAD45 /* CoreGraphics.framework */,

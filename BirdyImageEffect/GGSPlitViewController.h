@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) IBOutlet UIViewController *masterViewController;
 @property (nonatomic, strong) IBOutlet UIViewController *detailViewController;
+@property (nonatomic, strong) NSArray *viewControllers;
+
+- (void) setMasterViewController:(UIViewController *)masterViewController andDetailViewController:(UIViewController*)detailViewController;
 
 @end

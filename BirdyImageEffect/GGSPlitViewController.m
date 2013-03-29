@@ -17,7 +17,21 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    //[self setup];
+}
+
+- (BOOL)shouldAutomaticallyForwardRotationMethods
+{
+    return NO;
+}
+
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods
+{
+    return NO;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationMaskLandscapeLeft & UIInterfaceOrientationMaskLandscapeRight;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,7 +47,6 @@
 {
 	if ((self = [super initWithCoder:aDecoder]))
     {
-		[self setup];
 	}
 	
 	return self;
@@ -42,17 +55,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.contentMode = UIViewContentModeRedraw;
 }
 
 - (void) setup
 {
-    [self layoutSubViews];
 }
 
 - (void) layoutSubViews
 {
     [self layoutSubviewsForInterfaceOrientation:self.interfaceOrientation withAnimation:YES];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    [self.masterViewController viewWillLayoutSubviews];
+    [self.detailViewController viewWillLayoutSubviews];
+    
+    [self layoutSubViews];
 }
 
 - (void) layoutSubviewsForInterfaceOrientation:(UIInterfaceOrientation)orientation withAnimation:(BOOL)animated
@@ -63,30 +84,33 @@
     if (self.detailViewController && !self.detailViewController.view.superview)
         [self.view addSubview:self.detailViewController.view];
     
-    CGRect screenBounds = [UIScreen mainScreen].bounds;
+    //CGRect screenBounds = [UIScreen mainScreen].bounds;
+    CGRect screenBounds = self.view.bounds;
     float width = screenBounds.size.width;
     float height = screenBounds.size.height;
     
     if (UIInterfaceOrientationIsLandscape(orientation))
     {
-        width = screenBounds.size.height;
-        height = screenBounds.size.width;
+        //width = screenBounds.size.height;
+        //height = screenBounds.size.width;
     }
+    
+    //NSLog(@"width %f, height %f",width,height);
+    //NSLog(@"self.frame %@",NSStringFromCGRect(self.view.frame));
     
     float splitPosition = 320.0;
     
     CGRect frame = CGRectMake(0, 0, width, height);
     // master
     frame.size.width = splitPosition;
-    //frame.size.height = 1000.0;
     self.masterViewController.view.frame = frame;
-    self.masterViewController.view.layer.borderWidth = 1.5f;
+    self.masterViewController.view.layer.borderWidth = 1.0f;
     
     // details
     frame.size.width = width - splitPosition;
     frame.origin.x = splitPosition;
     self.detailViewController.view.frame = frame;
-    self.detailViewController.view.layer.borderWidth = 1.5f;
+    self.detailViewController.view.layer.borderWidth = 1.0f;
 }
 
 - (void)didReceiveMemoryWarning
@@ -96,24 +120,32 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     [self.masterViewController viewWillAppear:animated];
     [self.detailViewController viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
     [self.masterViewController viewDidAppear:animated];
     [self.detailViewController viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
+    
     [self.masterViewController viewWillDisappear:animated];
     [self.detailViewController viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    [super viewDidDisappear:animated];
+    
     [self.masterViewController viewDidDisappear:animated];
     [self.detailViewController viewDidDisappear:animated];
 }
@@ -128,57 +160,43 @@
     return YES;
 }
 
-
+//1
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
 	[self.masterViewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	[self.detailViewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 }
 
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-	[self.masterViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-	[self.detailViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-}
-
-
+//2
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 										 duration:(NSTimeInterval)duration
 {
 	[self.masterViewController willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	[self.detailViewController willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	
 	[self layoutSubviewsForInterfaceOrientation:toInterfaceOrientation withAnimation:YES];
 }
 
-
-- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+//3
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-	[self.masterViewController willAnimateFirstHalfOfRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	[self.detailViewController willAnimateFirstHalfOfRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self.masterViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self.detailViewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 }
 
-
-- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+-(void)setMasterViewController:(UIViewController *)masterViewController andDetailViewController:(UIViewController *)detailViewController
 {
-	[self.masterViewController didAnimateFirstHalfOfRotationToInterfaceOrientation:toInterfaceOrientation];
-	[self.detailViewController didAnimateFirstHalfOfRotationToInterfaceOrientation:toInterfaceOrientation];
+    self.masterViewController = masterViewController;
+    self.detailViewController = detailViewController;
 }
 
-
-- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation duration:(NSTimeInterval)duration
-{
-	[self.masterViewController willAnimateSecondHalfOfRotationFromInterfaceOrientation:fromInterfaceOrientation duration:duration];
-	[self.detailViewController willAnimateSecondHalfOfRotationFromInterfaceOrientation:fromInterfaceOrientation duration:duration];
-}
 
 - (void)setMasterViewController:(UIViewController *)viewController
 {
     if (_masterViewController != viewController)
     {
         _masterViewController = viewController;
-        [self layoutSubViews];
+        [self addChildViewController:_masterViewController];
+        [_masterViewController didMoveToParentViewController:self];
     }
     
 }
@@ -188,7 +206,8 @@
     if (_detailViewController != viewController)
     {
         _detailViewController = viewController;
-        [self layoutSubViews];
+        [self addChildViewController:_detailViewController];
+        [_detailViewController didMoveToParentViewController:self];
     }
 }
 
