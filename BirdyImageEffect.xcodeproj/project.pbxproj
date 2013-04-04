@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		353442A8170C8CCD00646C94 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353442A7170C8CCD00646C94 /* OpenGLES.framework */; };
 		359D5CFD16FB727A00D560CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D5CFC16FB727A00D560CB /* QuartzCore.framework */; };
 		35BB86A316FB1D98003FAD45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BB86A216FB1D98003FAD45 /* UIKit.framework */; };
 		35BB86A516FB1D98003FAD45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BB86A416FB1D98003FAD45 /* Foundation.framework */; };
@@ -22,11 +23,15 @@
 		35BB86C216FB1D98003FAD45 /* GGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB86C116FB1D98003FAD45 /* GGHomeViewController.m */; };
 		35BB870416FB4CAF003FAD45 /* GGMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB870316FB4CAF003FAD45 /* GGMasterViewController.m */; };
 		35BB870716FB4D09003FAD45 /* GGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35BB870616FB4D09003FAD45 /* GGDetailViewController.m */; };
+		35C7FA0B170C2E9900732184 /* GGThreeFlapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7FA0A170C2E9900732184 /* GGThreeFlapsViewController.m */; };
+		35C7FA0E170C593900732184 /* GGSubMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7FA0D170C593900732184 /* GGSubMasterViewController.m */; };
 		35C8E02316FC5E61001B755B /* GGSPlitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C8E02216FC5E61001B755B /* GGSPlitViewController.m */; };
+		35CA4B85170B086C00F573E8 /* photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 35CA4B84170B086C00F573E8 /* photo.jpeg */; };
 		9C2348301702008700DAE9EE /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C23482F1702008700DAE9EE /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		353442A7170C8CCD00646C94 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		359D5CFC16FB727A00D560CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		35BB869F16FB1D98003FAD45 /* BirdyImageEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirdyImageEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BB86A216FB1D98003FAD45 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -49,8 +54,13 @@
 		35BB870316FB4CAF003FAD45 /* GGMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGMasterViewController.m; sourceTree = "<group>"; };
 		35BB870516FB4D09003FAD45 /* GGDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGDetailViewController.h; sourceTree = "<group>"; };
 		35BB870616FB4D09003FAD45 /* GGDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGDetailViewController.m; sourceTree = "<group>"; };
+		35C7FA09170C2E9900732184 /* GGThreeFlapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGThreeFlapsViewController.h; sourceTree = "<group>"; };
+		35C7FA0A170C2E9900732184 /* GGThreeFlapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGThreeFlapsViewController.m; sourceTree = "<group>"; };
+		35C7FA0C170C593900732184 /* GGSubMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSubMasterViewController.h; sourceTree = "<group>"; };
+		35C7FA0D170C593900732184 /* GGSubMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSubMasterViewController.m; sourceTree = "<group>"; };
 		35C8E02116FC5E61001B755B /* GGSPlitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGSPlitViewController.h; sourceTree = "<group>"; };
 		35C8E02216FC5E61001B755B /* GGSPlitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGSPlitViewController.m; sourceTree = "<group>"; };
+		35CA4B84170B086C00F573E8 /* photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpeg; sourceTree = "<group>"; };
 		9C23482F1702008700DAE9EE /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -59,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				353442A8170C8CCD00646C94 /* OpenGLES.framework in Frameworks */,
 				9C2348301702008700DAE9EE /* CoreImage.framework in Frameworks */,
 				359D5CFD16FB727A00D560CB /* QuartzCore.framework in Frameworks */,
 				35BB86A316FB1D98003FAD45 /* UIKit.framework in Frameworks */,
@@ -73,6 +84,7 @@
 		35BB869616FB1D98003FAD45 = {
 			isa = PBXGroup;
 			children = (
+				353442A7170C8CCD00646C94 /* OpenGLES.framework */,
 				35BB86A816FB1D98003FAD45 /* BirdyImageEffect */,
 				35BB86A116FB1D98003FAD45 /* Frameworks */,
 				35BB86A016FB1D98003FAD45 /* Products */,
@@ -102,6 +114,7 @@
 		35BB86A816FB1D98003FAD45 /* BirdyImageEffect */ = {
 			isa = PBXGroup;
 			children = (
+				35C7FA07170C2E3900732184 /* GGThreeFlapsController */,
 				35BB86A916FB1D98003FAD45 /* Supporting Files */,
 				35C8E02016FC5D3F001B755B /* GGSplitViewController */,
 				35BB86B116FB1D98003FAD45 /* GGAppDelegate.h */,
@@ -114,6 +127,8 @@
 				35BB870316FB4CAF003FAD45 /* GGMasterViewController.m */,
 				35BB870516FB4D09003FAD45 /* GGDetailViewController.h */,
 				35BB870616FB4D09003FAD45 /* GGDetailViewController.m */,
+				35C7FA0C170C593900732184 /* GGSubMasterViewController.h */,
+				35C7FA0D170C593900732184 /* GGSubMasterViewController.m */,
 			);
 			path = BirdyImageEffect;
 			sourceTree = "<group>";
@@ -121,6 +136,7 @@
 		35BB86A916FB1D98003FAD45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35CA4B84170B086C00F573E8 /* photo.jpeg */,
 				35BB86AA16FB1D98003FAD45 /* BirdyImageEffect-Info.plist */,
 				35BB86AB16FB1D98003FAD45 /* InfoPlist.strings */,
 				35BB86AE16FB1D98003FAD45 /* main.m */,
@@ -130,6 +146,15 @@
 				35BB86B816FB1D98003FAD45 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35C7FA07170C2E3900732184 /* GGThreeFlapsController */ = {
+			isa = PBXGroup;
+			children = (
+				35C7FA09170C2E9900732184 /* GGThreeFlapsViewController.h */,
+				35C7FA0A170C2E9900732184 /* GGThreeFlapsViewController.m */,
+			);
+			name = GGThreeFlapsController;
 			sourceTree = "<group>";
 		};
 		35C8E02016FC5D3F001B755B /* GGSplitViewController */ = {
@@ -199,6 +224,7 @@
 				35BB86B916FB1D98003FAD45 /* Default-568h@2x.png in Resources */,
 				35BB86BC16FB1D98003FAD45 /* MainStoryboard_iPhone.storyboard in Resources */,
 				35BB86BF16FB1D98003FAD45 /* MainStoryboard_iPad.storyboard in Resources */,
+				35CA4B85170B086C00F573E8 /* photo.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +241,8 @@
 				35BB870416FB4CAF003FAD45 /* GGMasterViewController.m in Sources */,
 				35BB870716FB4D09003FAD45 /* GGDetailViewController.m in Sources */,
 				35C8E02316FC5E61001B755B /* GGSPlitViewController.m in Sources */,
+				35C7FA0B170C2E9900732184 /* GGThreeFlapsViewController.m in Sources */,
+				35C7FA0E170C593900732184 /* GGSubMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

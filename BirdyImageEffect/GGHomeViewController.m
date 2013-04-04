@@ -9,6 +9,7 @@
 #import "GGHomeViewController.h"
 #import "GGMasterViewController.h"
 #import "GGDetailViewController.h"
+#import "GGSubMasterViewController.h"
 
 @interface GGHomeViewController ()
 
@@ -32,9 +33,12 @@
     
     self.masterViewController = [storyboard instantiateViewControllerWithIdentifier:@"Master"];
     self.detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"Detail"];
+    self.subMasterViewController = [storyboard instantiateViewControllerWithIdentifier:@"SubMaster"];
     
-    ((GGMasterViewController*)self.masterViewController).detailViewController = ((GGDetailViewController*)self.detailViewController);
-    NSLog(@"hello");
+    ((GGMasterViewController*)self.masterViewController).subMasterViewController = ((GGSubMasterViewController*)self.subMasterViewController);
+    
+    ((GGDetailViewController*)self.detailViewController).subMasterViewController = ((GGSubMasterViewController*)self.subMasterViewController);
+    ((GGSubMasterViewController*)self.subMasterViewController).detailViewController = ((GGDetailViewController*)self.detailViewController);
 }
 
 - (void)didReceiveMemoryWarning

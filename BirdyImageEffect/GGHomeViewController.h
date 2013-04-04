@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GGSPlitViewController.h"
+#import "GGThreeFlapsViewController.h"
 
-@interface GGHomeViewController : GGSPlitViewController
+@interface GGHomeViewController : GGThreeFlapsViewController
 
 @end

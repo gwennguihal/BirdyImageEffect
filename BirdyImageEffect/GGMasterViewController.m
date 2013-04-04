@@ -7,25 +7,25 @@
 //
 
 #import "GGMasterViewController.h"
+#import "GGThreeFlapsViewController.h"
 
 @interface GGMasterViewController ()
 
 @property NSArray *filters;
+@property NSMutableArray *filtersDisplayName;
 
 @end
 
 
 @implementation GGMasterViewController
 
-@synthesize filters, detailViewController;
+@synthesize filters, subMasterViewController;
 
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
     {
         self.clearsSelectionOnViewWillAppear = NO;
-        self.contentSizeForViewInPopover = CGSizeMake(320.0, 400.0);
-        //self.modalPresentationStyle = UIModalTransitionStyleFlipHorizontal;
     }
     [super awakeFromNib];
 }
@@ -49,10 +49,12 @@
     [super viewDidLoad];
     
     self.filters = [CIFilter filterNamesInCategory:kCICategoryBuiltIn];
+    self.filtersDisplayName = [NSMutableArray arrayWithCapacity:self.filters.count];
     
     for (NSString *filterName in self.filters)
     {
         CIFilter *filter = [CIFilter filterWithName:filterName];
+        [self.filtersDisplayName addObject:[filter.attributes objectForKey:@"CIAttributeFilterDisplayName"]];
         NSLog(@"%@", [filter attributes]);
     }
 }
@@ -80,7 +82,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.filters objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.filtersDisplayName objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -89,7 +91,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.detailViewController.detailItem = [self.filters objectAtIndex:indexPath.row];
+    self.subMasterViewController.selectedFilterName = [self.filters objectAtIndex:indexPath.row];
+    [((UIViewController <GGThreeFlapsViewControllerProtocol> *)(self.parentViewController)) openFlap];
      
 }
 

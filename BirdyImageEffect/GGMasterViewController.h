@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "GGDetailViewController.h"
+#import "GGSubMasterViewController.h"
 
 @interface GGMasterViewController : UITableViewController
 
-@property (nonatomic, strong) GGDetailViewController *detailViewController;
+@property (nonatomic, weak) GGSubMasterViewController *subMasterViewController;
+//@property (nonatomic, weak) id<GGThreeFlapsViewControllerProtocol> three
 
 @end

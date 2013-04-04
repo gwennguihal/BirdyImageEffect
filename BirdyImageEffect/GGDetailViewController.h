@@ -7,10 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GGSubMasterViewController.h"
 
-@interface GGDetailViewController : UIViewController
+@protocol GGDetailViewControllerDelegate <NSObject>
 
-@property (nonatomic, strong) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+- (void) applyFilter;
+
+@end
+
+@interface GGDetailViewController : UIViewController <GGDetailViewControllerDelegate>
+
+@property (nonatomic, weak) GGSubMasterViewController *subMasterViewController;
+
+@property (nonatomic, copy) NSString *selectedFilterName;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
